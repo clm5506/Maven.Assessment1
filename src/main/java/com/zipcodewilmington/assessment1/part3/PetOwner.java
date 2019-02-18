@@ -15,21 +15,34 @@ public class PetOwner {
 
     String name;
 
-    Pet[] arrayOfPets2;
-    //List<Pet> arrayOfPets = new ArrayList<>();
+    //Pet arrayOfPets2[];
+
+    List<Pet> arrayOfPets = new ArrayList<>();
 
 
     public PetOwner(String name, Pet... pets) {
 
         this.name = name;
-        List<Pet> arrayOfPets = new ArrayList<>();
-        arrayOfPets.addAll(Arrays.asList(pets));
-        arrayOfPets2 = arrayOfPets.toArray(new Pet[0]);
+
+
+
+
+        //List<Pet> arrayOfPets = new ArrayList<>();
+
+       // arrayOfPets.addAll(Arrays.asList(pets));
+       // arrayOfPets2 = arrayOfPets.toArray(new Pet[0]);
 
       //  for(int i = 0; i < pets.length; i++) {
         //    this.arrayOfPets[i] = pets[i];
         //}
+       /* if(pets != null) {
+            Pet[] temp = new Pet[pets.length];
 
+            for (int i = 0; i <temp.length; i++) {
+                temp[i] = pets[i];
+            }
+
+        }*/
 
 
     }

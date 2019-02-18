@@ -39,15 +39,10 @@ public class IntegerUtils {
      */
     public static Integer reverseDigits(Integer val) {
 
-        StringBuilder str = new StringBuilder(val);
+      StringBuilder buf = new StringBuilder(String.valueOf(val));
+      buf = buf.reverse();
+      Integer answer = Integer.valueOf(buf.toString());
 
-        str = str.reverse();
-        String[] strArray = str.toString().split("");
-
-        Integer intAns = 0;
-
-
-
-        return null;
+        return answer;
     }
 }

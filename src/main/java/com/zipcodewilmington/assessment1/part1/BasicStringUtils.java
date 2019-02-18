@@ -1,5 +1,7 @@
 package com.zipcodewilmington.assessment1.part1;
 
+
+
 /**
  * Created by leon on 2/16/18.
  */
@@ -56,7 +58,19 @@ public class BasicStringUtils {
      */
     public static String invertCasing(String str) {
 
+        char[] chars = str.toCharArray();
 
-        return null;
+        for(int i = 0; i <chars.length; i++) {
+
+            char c = chars[i];
+            if(Character.isUpperCase(c)) {
+                chars[i] = Character.toLowerCase(c);
+            } else if (Character.isLowerCase(c)) {
+                chars[i] = Character.toUpperCase(c);
+            }
+
+        }
+
+        return new String(chars);
     }
 }
