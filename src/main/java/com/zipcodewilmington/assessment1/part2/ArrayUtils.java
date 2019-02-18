@@ -53,8 +53,26 @@ public class ArrayUtils {
      */
     public static Object getMostCommon(Object[] objectArray) {
 
+        int count = 1, tempCount;
+        Object popular = objectArray[0];
 
-        return null;
+        Object temp = 0;
+
+        for(int i = 0; i<objectArray.length-1; i++) {
+            temp = objectArray[i];
+            tempCount = 0;
+            for(int j = 1; j < objectArray.length; j++) {
+                if(temp.equals(objectArray[i])) {
+                    tempCount++;
+                }
+                if(tempCount>count){
+                    popular = temp;
+                    count = tempCount;
+                }
+            }
+        }
+
+        return popular;
     }
 
 

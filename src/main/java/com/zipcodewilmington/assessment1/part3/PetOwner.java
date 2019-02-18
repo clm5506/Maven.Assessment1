@@ -1,8 +1,6 @@
 package com.zipcodewilmington.assessment1.part3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by leon on 2/16/18.
@@ -17,17 +15,17 @@ public class PetOwner {
 
     //Pet arrayOfPets2[];
 
-    List<Pet> arrayOfPets = new ArrayList<>();
 
+    List<Pet[]> arrayOfPets;
 
     public PetOwner(String name, Pet... pets) {
 
         this.name = name;
+        this.arrayOfPets = new ArrayList<Pet[]>();
+        if(pets != null) {
+            arrayOfPets.add(pets);
+        }
 
-
-
-
-        //List<Pet> arrayOfPets = new ArrayList<>();
 
        // arrayOfPets.addAll(Arrays.asList(pets));
        // arrayOfPets2 = arrayOfPets.toArray(new Pet[0]);
@@ -51,7 +49,7 @@ public class PetOwner {
      * @param pet pet to be added to the composite collection of Pets
      */
     public void addPet(Pet pet) {
-
+       // arrayOfPets.add(pet);
 
     }
 
