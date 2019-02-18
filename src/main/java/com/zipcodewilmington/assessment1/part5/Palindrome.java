@@ -4,15 +4,30 @@ public class Palindrome {
 
     public Integer countPalindromes(String input){
 
-        int counter = 0;
-        String[] stringArray = input.split("");
+        String a;
+        Integer countSubs=input.length();
 
-        for (int i = 0; i < stringArray.length; i++) {
-            if(!stringArray[i].equals(stringArray[i])) {
-            counter++;
+        for(int i = 0; i < input.length(); i++) {
+            for(int j = i+2; j<=input.length(); j++) {
+                a = input.substring(i,j);
+                countSubs+= count(a);
             }
+
         }
 
-        return counter;
+        return countSubs;
     }
+
+    public Integer count(String str){
+
+        for(int i = 0; i<str.length(); i++) {
+            if(str.charAt(i)!= str.charAt(str.length()-1-i)) {
+                return 0;
+            }
+
+        }
+        return 1;
+    }
+
+
 }
