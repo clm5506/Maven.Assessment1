@@ -14,9 +14,9 @@ public class ArrayUtils {
      */
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
 
-        Integer counter= 0;
-        for(int i = 0; i < objectArray.length; i++) {
-            if(objectArray[i].equals(objectToCount)) {
+        Integer counter = 0;
+        for (int i = 0; i < objectArray.length; i++) {
+            if (objectArray[i].equals(objectToCount)) {
                 counter++;
             }
 
@@ -35,8 +35,8 @@ public class ArrayUtils {
 
         ArrayList<Object> newArrayList = new ArrayList<Object>();
 
-        for(int i = 0; i < objectArray.length; i++) {
-            if(objectArray[i].equals(objectToRemove)==false) {
+        for (int i = 0; i < objectArray.length; i++) {
+            if (objectArray[i].equals(objectToRemove) == false) {
                 newArrayList.add(objectArray[i]);
             }
         }
@@ -53,28 +53,18 @@ public class ArrayUtils {
      */
     public static Object getMostCommon(Object[] objectArray) {
 
-        int count = 1, tempCount;
-        Object popular = objectArray[0];
+        Integer num = 0;
+        Object mostCommon = null;
 
-        Object temp = 0;
-
-        for(int i = 0; i<objectArray.length-1; i++) {
-            temp = objectArray[i];
-            tempCount = 0;
-            for(int j = 1; j < objectArray.length; j++) {
-                if(temp.equals(objectArray[i])) {
-                    tempCount++;
-                }
-                if(tempCount>count){
-                    popular = temp;
-                    count = tempCount;
-                }
+        for (Object o : objectArray) {
+            int temp = getNumberOfOccurrences(objectArray, o);
+            if (temp > num) {
+                mostCommon = o;
+                num = temp;
             }
         }
-
-        return popular;
+        return mostCommon;
     }
-
 
     /**
      * @param objectArray an array of any type of Object
@@ -82,9 +72,14 @@ public class ArrayUtils {
      * given an array of objects, named `objectArray` return the least frequently occuring object in the array
      */
     public static Object getLeastCommon(Object[] objectArray) {
+        Object result =  objectArray[0];
 
-
-        return null;
+        for(Object o : objectArray){
+            if(getNumberOfOccurrences(objectArray,o) < getNumberOfOccurrences(objectArray,result)){
+                result = o;
+            }
+        }
+        return result;
     }
 
     /**
@@ -95,20 +90,9 @@ public class ArrayUtils {
      */
     public static Object[] mergeArrays(Object[] objectArray, Object[] objectArrayToAdd) {
 
-        //List<Object> list = new ArrayList<>(Arrays.asList(objectArray));
+       List<Object> list = new ArrayList<>(Arrays.asList(objectArray));
+       Collections.addAll(list,objectArrayToAdd);
+       return list.toArray(new Integer[list.size()]);
 
-        //Collections.addAll(list, objectArrayToAdd);
-
-        //Object[] objArray = (Integer[])list.toArray();
-
-        Collection<Object> result = new ArrayList<Object>(objectArray.length+objectArrayToAdd.length);
-
-        for(Object val : objectArray) {
-            result.add(val);
-        }
-        for(Object val : objectArrayToAdd) {
-            result.add(val);
-        }
-        return  result.toArray();
     }
 }

@@ -10,7 +10,6 @@ public class BasicArrayUtils {
      */
     public static String getFirstElement(String[] stringArray) {
 
-
         return stringArray[0];
     }
 

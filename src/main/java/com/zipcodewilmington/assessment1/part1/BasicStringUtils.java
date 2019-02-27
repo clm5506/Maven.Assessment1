@@ -39,8 +39,7 @@ public class BasicStringUtils {
         str = camelCase(str);
         return str;
     }
-
-
+    
     /**
      * @param str a string input from user
      * @return string with identical contents excluding first and last character

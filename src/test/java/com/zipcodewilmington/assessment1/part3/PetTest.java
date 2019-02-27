@@ -33,7 +33,6 @@ public class PetTest {
         Assert.assertEquals(expected, actual);
     }
 
-
     @Test
     public void getOwnerTest() {
         // Given
